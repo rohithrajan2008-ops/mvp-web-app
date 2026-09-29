@@ -19,6 +19,7 @@ const PORT = process.env.PORT || 4000;
 const JWT_SECRET = process.env.JWT_SECRET || "change-this-secret-before-production";
 
 const app = express();
+app.set("trust proxy", 1);
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: { origin: true, credentials: true }
